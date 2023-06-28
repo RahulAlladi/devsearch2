@@ -120,7 +120,16 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
+MEDIA_URL = '/images/'
+
+STATICFILES_DIRS = [
+    BASE_DIR / 'static'
+    #os.path.join(BASE_DIR, 'static') # you can also use this
+]
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images') ## if this line isnt present the user uploaded content like project images will be saved the project folder , with this line we are telling django where to save these files
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')## specifying a path to save the satic files duting production
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
