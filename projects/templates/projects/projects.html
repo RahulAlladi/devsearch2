@@ -1,24 +1,35 @@
 {% extends 'main.html' %}
 {% block content %}
 
-<p>hello oyou are on the {{page}} page, the page name is dynamic</p>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Project</th>
+        <th>Votes</th>
+        <th>Positive votes</th>
+        <th></th>
+    </tr>
+    <th>
+        {% for project in projects %}
+        <tr>
+            <td>{{project.id}}</td>
+            <td>{{project.title}}</td>
+            <td>{{project.vote_total}}</td>
+            <td>{{project.vote_ratio}}%</td>
+            <td>{{project.created}}</td>
+            <td><a href="{% url 'project' project.id %}">View</a></td>
+        </tr>
 
-{%  if number > 10 %}
-<p>number greater than 10</p>
-
-{%  elif number == 10 %}
-<p>number equal to 10</p>
-
-{% else %}
-<p>number less than  10</p>
-{% endif %}
-https://www.youtube.com/watch?v=yma_CN-o7XM
+        {% endfor %}
+    </th>
+</table>
 <ul>
     {% for project in projects %}
         <li> id: {{project.id}} </li>
         <!-- <li> Title: <a href="/project/{{project.id}}">{{project.title}}</a> </li> -->
         <li> Title: <a href="{% url 'project' project.id %}">{{project.title}}</a> </li>
         <li> description: {{project.description}} </li>
+        <li> created: {{project.created}} </li>
     {% endfor %}
 </ul>
 {% endblock content %}
