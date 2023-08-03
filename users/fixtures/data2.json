@@ -1,0 +1,13 @@
+[
+    {
+      "model": "users.Skill",
+      "pk": 5,
+      "fields": {
+        "owner": "c1c3cce2-508e-4528-8196-827451215909",
+        "name": "Numpy",
+        "description": "python ds library",
+        "created": "2023-07-05 14:30:00",
+        "id":"c1c3cce2-508e-4528-8196-827451215909"
+      }
+    }
+  ]

@@ -1,0 +1,7 @@
+- model: users.Skill
+  pk: 5
+  fields:
+    owner: rahul
+    name: Numpy
+    description: python ds library
+
